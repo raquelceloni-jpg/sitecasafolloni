@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Casa Folloni — Coworking acolhedor em Curitiba para profissionais do mercado imobiliário e advocacia. 700m² com salas privativas, coletivas, churrasqueiras, acesso 24h e área de descanso.">
+  <title>Casa Folloni | Coworking Imobiliário & Advocacia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navegação -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#inicio" class="nav__logo">
+        <span class="nav__logo-main">Casa Folloni</span>
+        <span class="nav__logo-sub">Coworking</span>
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#espacos">Espaços</a></li>
+        <li><a href="#salas">Salas</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#contato" class="nav__cta">Agendar visita</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="inicio">
+    <div class="hero__bg">
+      <img src="public/images/area-de-lazer.png" alt="Área de lazer da Casa Folloni com churrasqueira, jardim vertical e mesa de mármore" loading="eager">
+      <div class="hero__overlay"></div>
+    </div>
+    <div class="hero__content container">
+      <p class="hero__tag">Rua Alberto Folloni, 700 — Curitiba, PR</p>
+      <h1 class="hero__title">Onde o mercado imobiliário<br>e a advocacia se encontram</h1>
+      <p class="hero__subtitle">Um ambiente acolhedor de 700m² para conectar profissionais, fechar negócios e cultivar relações — com salas privativas, coletivas e tudo que você precisa para trabalhar com conforto.</p>
+      <div class="hero__actions">
+        <a href="#contato" class="btn btn--primary">Agendar uma visita</a>
+        <a href="#salas" class="btn btn--outline">Ver salas disponíveis</a>
+      </div>
+    </div>
+    <div class="hero__scroll">
+      <span>Conheça o espaço</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </div>
+  </section>
+
+  <!-- Sobre -->
+  <section class="sobre section" id="sobre">
+    <div class="container sobre__grid">
+      <div class="sobre__image reveal">
+        <img src="public/images/IMG_7596.jpeg" alt="Sala de estar acolhedora da Casa Folloni" loading="lazy">
+        <div class="sobre__badge">
+          <span class="sobre__badge-number">700</span>
+          <span class="sobre__badge-label">m² de espaço</span>
+        </div>
+      </div>
+      <div class="sobre__text reveal">
+        <span class="section__label">Sobre nós</span>
+        <h2 class="section__title">Mais que um coworking —<br>um ponto de conexão</h2>
+        <p class="sobre__lead">A Casa Folloni nasceu para reunir profissionais do mercado imobiliário e da advocacia em um ambiente que combina sofisticação, conforto e proximidade.</p>
+        <p>Aqui você encontra salas coletivas para networking, salas privativas para atendimento de clientes e reuniões estratégicas, além de áreas de descanso para aquele intervalo que faz toda a diferença no dia de trabalho.</p>
+        <div class="sobre__highlights">
+          <div class="sobre__highlight">
+            <div class="sobre__highlight-icon">🏠</div>
+            <div>
+              <strong>Mercado Imobiliário</strong>
+              <p>Espaços ideais para corretores, imobiliárias e construtoras</p>
+            </div>
+          </div>
+          <div class="sobre__highlight">
+            <div class="sobre__highlight-icon">⚖️</div>
+            <div>
+              <strong>Advocacia</strong>
+              <p>Salas privativas para consultas e trabalho focado</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Espaços / Amenidades -->
+  <section class="espacos section section--alt" id="espacos">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__label">O que oferecemos</span>
+        <h2 class="section__title">Estrutura completa para o seu dia</h2>
+        <p class="section__desc">Tudo pensado para quem precisa de produtividade sem abrir mão de um ambiente acolhedor e profissional.</p>
+      </div>
+      <div class="espacos__grid">
+        <article class="espaco-card reveal">
+          <div class="espaco-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <h3>Salas Coletivas</h3>
+          <p>Ambientes compartilhados para trabalho em equipe, networking e troca de experiências entre profissionais do setor.</p>
+        </article>
+        <article class="espaco-card reveal">
+          <div class="espaco-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg>
+          </div>
+          <h3>Salas Privativas</h3>
+          <p>Escritórios fechados para atendimento de clientes, reuniões confidenciais e trabalho com total privacidade.</p>
+        </article>
+        <article class="espaco-card reveal">
+          <div class="espaco-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="10" width="18" height="3" rx="1"/><path d="M5 13v5M19 13v5M9 7v3M15 7v3"/></svg>
+          </div>
+          <h3>Sala de Reunião</h3>
+          <p>Mesa de reunião e sofás para encontros formais ou descontraídos — o ambiente certo para negociar, apresentar ou simplesmente conversar com clientes.</p>
+        </article>
+        <article class="espaco-card reveal">
+          <div class="espaco-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M5 12a2 2 0 01-2-2V8a2 2 0 012-2h14a2 2 0 012 2v2a2 2 0 01-2 2M5 12v4a2 2 0 002 2h10a2 2 0 002-2v-4"/><path d="M8 16h.01M12 16h.01M16 16h.01"/></svg>
+          </div>
+          <h3>Cozinha Equipada</h3>
+          <p>Cozinha completa com área de café para você preparar bebidas, receber clientes com um bom café ou fazer aquela pausa entre os compromissos.</p>
+        </article>
+        <article class="espaco-card reveal">
+          <div class="espaco-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12.55a11 11 0 0114.08 0"/><path d="M1.42 9a16 16 0 0121.16 0"/><path d="M8.53 16.11a6 6 0 016.95 0"/><circle cx="12" cy="20" r="1"/></svg>
+          </div>
+          <h3>Internet de Alta Velocidade</h3>
+          <p>Wi-Fi dedicado em todo o espaço para videochamadas, sistemas e trabalho remoto sem interrupções.</p>
+        </article>
+        <article class="espaco-card reveal">
+          <div class="espaco-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8 2 4 6 4 10c0 5.25 8 12 8 12s8-6.75 8-12c0-4-4-8-8-8z"/><circle cx="12" cy="10" r="2"/></svg>
+          </div>
+          <h3>Área de Descanso</h3>
+          <p>Espaços confortáveis para pausas, café e momentos de descontração entre uma reunião e outra.</p>
+        </article>
+        <article class="espaco-card reveal">
+          <div class="espaco-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v4M4.93 4.93l2.83 2.83M2 12h4M4.93 19.07l2.83-2.83M12 18v4M19.07 19.07l-2.83-2.83M22 12h-4M19.07 4.93l-2.83 2.83"/></svg>
+          </div>
+          <h3>2 Churrasqueiras</h3>
+          <p>Perfeitas para confraternizações, eventos corporativos e networking informal com clientes e parceiros.</p>
+        </article>
+        <article class="espaco-card reveal">
+          <div class="espaco-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 4v10.54a4 4 0 11-4 0V4a2 2 0 014 0z"/></svg>
+          </div>
+          <h3>Ar-condicionado</h3>
+          <p>Climatização em todos os ambientes para garantir conforto térmico durante todo o expediente.</p>
+        </article>
+        <article class="espaco-card reveal">
+          <div class="espaco-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3>Acesso 24 Horas</h3>
+          <p>Seu escritório disponível a qualquer hora — trabalhe no seu ritmo, inclusive finais de semana e feriados.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Salas e Preços -->
+  <section class="salas section" id="salas">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__label">Planos</span>
+        <h2 class="section__title">Salas disponíveis</h2>
+        <p class="section__desc">Escolha o espaço ideal para o tamanho da sua equipe e o tipo de trabalho que você realiza.</p>
+      </div>
+      <div class="salas__grid">
+        <article class="sala-card reveal">
+          <div class="sala-card__header">
+            <h3>Auditório</h3>
+            <span class="sala-card__area">38 m²</span>
+          </div>
+          <p class="sala-card__desc">Espaço amplo para palestras, treinamentos, eventos corporativos e apresentações para grandes grupos.</p>
+          <ul class="sala-card__features">
+            <li>Ideal para eventos</li>
+            <li>Capacidade para grupos</li>
+            <li>Internet inclusa</li>
+          </ul>
+          <div class="sala-card__price">
+            <span class="sala-card__price-label">A partir de</span>
+            <span class="sala-card__price-value">R$ 4.429<span>,21</span></span>
+            <span class="sala-card__price-period">/mês</span>
+          </div>
+          <a href="#contato" class="btn btn--primary btn--block">Solicitar informações</a>
+        </article>
+
+        <article class="sala-card reveal sala-card--featured">
+          <div class="sala-card__tag">Mais popular</div>
+          <div class="sala-card__header">
+            <h3>Sala Coworking</h3>
+            <span class="sala-card__area">25 m²</span>
+          </div>
+          <p class="sala-card__desc">Ambiente compartilhado versátil para equipes que valorizam colaboração e proximidade com outros profissionais.</p>
+          <ul class="sala-card__features">
+            <li>Trabalho colaborativo</li>
+            <li>Networking diário</li>
+            <li>Internet inclusa</li>
+          </ul>
+          <div class="sala-card__price">
+            <span class="sala-card__price-label">A partir de</span>
+            <span class="sala-card__price-value">R$ 2.913<span>,96</span></span>
+            <span class="sala-card__price-period">/mês</span>
+          </div>
+          <a href="#contato" class="btn btn--primary btn--block">Solicitar informações</a>
+        </article>
+
+        <article class="sala-card reveal">
+          <div class="sala-card__header">
+            <h3>Sala Mesa de Reunião</h3>
+            <span class="sala-card__area">24,95 m²</span>
+          </div>
+          <p class="sala-card__desc">Sala privativa com mesa de reunião, perfeita para negociações, contratos e atendimento de clientes.</p>
+          <ul class="sala-card__features">
+            <li>Privacidade total</li>
+            <li>Mesa de reunião</li>
+            <li>Internet inclusa</li>
+          </ul>
+          <div class="sala-card__price">
+            <span class="sala-card__price-label">A partir de</span>
+            <span class="sala-card__price-value">R$ 2.908<span>,13</span></span>
+            <span class="sala-card__price-period">/mês</span>
+          </div>
+          <a href="#contato" class="btn btn--primary btn--block">Solicitar informações</a>
+        </article>
+
+        <article class="sala-card reveal">
+          <div class="sala-card__header">
+            <h3>Sala 13 m²</h3>
+            <span class="sala-card__area">13 m²</span>
+          </div>
+          <p class="sala-card__desc">Sala privativa de tamanho intermediário, ideal para profissionais autônomos que precisam de espaço próprio com ótimo custo-benefício.</p>
+          <ul class="sala-card__features">
+            <li>Escritório privativo</li>
+            <li>Ótimo custo-benefício</li>
+            <li>Internet inclusa</li>
+          </ul>
+          <div class="sala-card__price">
+            <span class="sala-card__price-label">A partir de</span>
+            <span class="sala-card__price-value">R$ 1.031<span>,29</span></span>
+            <span class="sala-card__price-period">/mês</span>
+          </div>
+          <a href="#contato" class="btn btn--primary btn--block">Solicitar informações</a>
+        </article>
+
+        <article class="sala-card reveal">
+          <div class="sala-card__header">
+            <h3>Sala 6 Lugares</h3>
+            <span class="sala-card__area">11,75 m²</span>
+          </div>
+          <p class="sala-card__desc">Sala compacta e funcional para pequenas equipes, consultores autônomos e profissionais liberais.</p>
+          <ul class="sala-card__features">
+            <li>Até 6 pessoas</li>
+            <li>Custo acessível</li>
+            <li>Internet inclusa</li>
+          </ul>
+          <div class="sala-card__price">
+            <span class="sala-card__price-label">A partir de</span>
+            <span class="sala-card__price-value">R$ 1.369<span>,56</span></span>
+            <span class="sala-card__price-period">/mês</span>
+          </div>
+          <a href="#contato" class="btn btn--primary btn--block">Solicitar informações</a>
+        </article>
+
+        <article class="sala-card reveal">
+          <div class="sala-card__header">
+            <h3>Estação Privativa</h3>
+            <span class="sala-card__area">Individual</span>
+          </div>
+          <p class="sala-card__desc">Mesa fixa em ambiente compartilhado — a opção ideal para quem quer seu próprio posto de trabalho com toda a estrutura do coworking.</p>
+          <ul class="sala-card__features">
+            <li>Mesa fixa exclusiva</li>
+            <li>Acesso 24 horas</li>
+            <li>Internet inclusa</li>
+          </ul>
+          <div class="sala-card__price">
+            <span class="sala-card__price-label">A partir de</span>
+            <span class="sala-card__price-value">R$ 700<span>,00</span></span>
+            <span class="sala-card__price-period">/mês</span>
+          </div>
+          <a href="#contato" class="btn btn--primary btn--block">Solicitar informações</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galeria -->
+  <section class="galeria section section--dark" id="galeria">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__label section__label--light">Galeria</span>
+        <h2 class="section__title section__title--light">Conheça cada canto<br>da Casa Folloni</h2>
+      </div>
+      <div class="galeria__grid" id="galeriaGrid">
+        <button class="galeria__item reveal" data-index="0">
+          <img src="public/images/IMG_7596.jpeg" alt="Sala de estar com sofá de couro" loading="lazy">
+        </button>
+        <button class="galeria__item reveal" data-index="1">
+          <img src="public/images/IMG_7597.jpeg" alt="Lounge com iluminação moderna" loading="lazy">
+        </button>
+        <button class="galeria__item reveal galeria__item--wide" data-index="2">
+          <img src="public/images/IMG_7606.jpeg" alt="Área comum com churrasqueira" loading="lazy">
+        </button>
+        <button class="galeria__item reveal" data-index="3">
+          <img src="public/images/IMG_7600.jpeg" alt="Sala privativa com mesa de reunião" loading="lazy">
+        </button>
+        <button class="galeria__item reveal" data-index="4">
+          <img src="public/images/IMG_7605.jpeg" alt="Sala coworking compartilhada" loading="lazy">
+        </button>
+        <button class="galeria__item reveal" data-index="5">
+          <img src="public/images/IMG_7608.jpeg" alt="Área de café e descanso" loading="lazy">
+        </button>
+        <button class="galeria__item reveal" data-index="6">
+          <img src="public/images/IMG_7609.jpeg" alt="Estante de livros e área de leitura" loading="lazy">
+        </button>
+        <button class="galeria__item reveal" data-index="7">
+          <img src="public/images/IMG_7598.jpeg" alt="Ambiente interno Casa Folloni" loading="lazy">
+        </button>
+        <button class="galeria__item reveal" data-index="8">
+          <img src="public/images/IMG_7599.jpeg" alt="Sala de trabalho Casa Folloni" loading="lazy">
+        </button>
+        <button class="galeria__item reveal" data-index="9">
+          <img src="public/images/IMG_7601.jpeg" alt="Escritório privativo" loading="lazy">
+        </button>
+        <button class="galeria__item reveal" data-index="10">
+          <img src="public/images/IMG_7602.jpeg" alt="Área de trabalho" loading="lazy">
+        </button>
+        <button class="galeria__item reveal" data-index="11">
+          <img src="public/images/IMG_7603.jpeg" alt="Sala de reunião" loading="lazy">
+        </button>
+        <button class="galeria__item reveal" data-index="12">
+          <img src="public/images/IMG_7604.jpeg" alt="Espaço coworking" loading="lazy">
+        </button>
+        <button class="galeria__item reveal" data-index="13">
+          <img src="public/images/IMG_7607.jpeg" alt="Área externa Casa Folloni" loading="lazy">
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Fechar">&times;</button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Anterior">&#8249;</button>
+    <img class="lightbox__img" id="lightboxImg" src="" alt="">
+    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Próxima">&#8250;</button>
+  </div>
+
+  <!-- Contato -->
+  <section class="contato section" id="contato">
+    <div class="container contato__grid">
+      <div class="contato__info reveal">
+        <span class="section__label">Contato</span>
+        <h2 class="section__title">Venha conhecer<br>a Casa Folloni</h2>
+        <p class="contato__lead">Agende uma visita e descubra o ambiente perfeito para o seu negócio crescer junto com outros profissionais de destaque.</p>
+        <div class="contato__details">
+          <div class="contato__detail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <strong>Endereço</strong>
+              <p>Rua Alberto Folloni, 700<br>Curitiba — Paraná</p>
+            </div>
+          </div>
+          <div class="contato__detail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
+            <div>
+              <strong>E-mail</strong>
+              <p><a href="mailto:raquelceloni@gmail.com">raquelceloni@gmail.com</a></p>
+            </div>
+          </div>
+          <div class="contato__detail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <div>
+              <strong>WhatsApp</strong>
+              <p><a href="https://wa.me/5541999250369" target="_blank" rel="noopener">(41) 99925-0369</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form class="contato__form reveal" id="contatoForm">
+        <div class="form__group">
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" name="nome" required placeholder="Seu nome">
+        </div>
+        <div class="form__row">
+          <div class="form__group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required placeholder="seu@email.com">
+          </div>
+          <div class="form__group">
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
+          </div>
+        </div>
+        <div class="form__group">
+          <label for="interesse">Interesse</label>
+          <select id="interesse" name="interesse">
+            <option value="">Selecione uma sala</option>
+            <option value="auditorio">Auditório (38 m²)</option>
+            <option value="coworking">Sala Coworking (25 m²)</option>
+            <option value="reuniao">Sala Mesa de Reunião (24,95 m²)</option>
+            <option value="13m2">Sala 13 m²</option>
+            <option value="6lugares">Sala 6 Lugares (11,75 m²)</option>
+            <option value="estacao">Estação Privativa de Trabalho</option>
+            <option value="visita">Apenas agendar visita</option>
+          </select>
+        </div>
+        <div class="form__group">
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="4" placeholder="Conte-nos sobre sua necessidade..."></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--block">Enviar mensagem</button>
+      </form>
+    </div>
+    <div class="contato__map container reveal">
+      <iframe
+        title="Localização Casa Folloni"
+        src="https://www.google.com/maps?q=Rua+Alberto+Folloni+700+Curitiba+Parana&output=embed"
+        width="100%"
+        height="400"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <span class="footer__logo">Casa Folloni</span>
+        <p>Coworking para profissionais do mercado imobiliário e advocacia.</p>
+      </div>
+      <div class="footer__links">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#espacos">Espaços</a></li>
+          <li><a href="#salas">Salas</a></li>
+          <li><a href="#galeria">Galeria</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer__links">
+        <h4>Contato</h4>
+        <ul>
+          <li>Rua Alberto Folloni, 700<br>Curitiba — Paraná</li>
+          <li><a href="mailto:raquelceloni@gmail.com">raquelceloni@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom container">
+      <p>&copy; 2026 Casa Folloni. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
