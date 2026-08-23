@@ -162,6 +162,13 @@
           <h3>Acesso 24 Horas</h3>
           <p>Seu escritório disponível a qualquer hora — trabalhe no seu ritmo, inclusive finais de semana e feriados.</p>
         </article>
+        <article class="espaco-card reveal">
+          <div class="espaco-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M10 17V7h4.5a3.5 3.5 0 010 7H10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Estacionamento Conveniado</h3>
+          <p>Na Rua Alberto Folloni, 563 — mensal R$&nbsp;180,00 ou avulso R$&nbsp;10,00/hora, para mais praticidade no seu dia a dia.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -172,7 +179,7 @@
       <div class="section__header reveal">
         <span class="section__label">Planos</span>
         <h2 class="section__title">Salas disponíveis</h2>
-        <p class="section__desc">Escolha o espaço ideal para o tamanho da sua equipe e o tipo de trabalho que você realiza.</p>
+        <p class="section__desc">Escolha o espaço ideal para o tamanho da sua equipe e o tipo de trabalho que você realiza. Todos os planos incluem <strong>3 horas mensais</strong> de sala de reunião.</p>
       </div>
       <div class="salas__grid">
         <article class="sala-card reveal">
@@ -184,7 +191,7 @@
           <ul class="sala-card__features">
             <li>Ideal para eventos</li>
             <li>Capacidade para grupos</li>
-            <li>Internet inclusa</li>
+            <li>3h de reunião/mês inclusas</li>
           </ul>
           <div class="sala-card__price">
             <span class="sala-card__price-label">A partir de</span>
@@ -204,7 +211,7 @@
           <ul class="sala-card__features">
             <li>Trabalho colaborativo</li>
             <li>Networking diário</li>
-            <li>Internet inclusa</li>
+            <li>3h de reunião/mês inclusas</li>
           </ul>
           <div class="sala-card__price">
             <span class="sala-card__price-label">A partir de</span>
@@ -223,7 +230,7 @@
           <ul class="sala-card__features">
             <li>Privacidade total</li>
             <li>Mesa de reunião</li>
-            <li>Internet inclusa</li>
+            <li>3h de reunião/mês inclusas</li>
           </ul>
           <div class="sala-card__price">
             <span class="sala-card__price-label">A partir de</span>
@@ -242,7 +249,7 @@
           <ul class="sala-card__features">
             <li>Escritório privativo</li>
             <li>Ótimo custo-benefício</li>
-            <li>Internet inclusa</li>
+            <li>3h de reunião/mês inclusas</li>
           </ul>
           <div class="sala-card__price">
             <span class="sala-card__price-label">A partir de</span>
@@ -261,7 +268,7 @@
           <ul class="sala-card__features">
             <li>Até 6 pessoas</li>
             <li>Custo acessível</li>
-            <li>Internet inclusa</li>
+            <li>3h de reunião/mês inclusas</li>
           </ul>
           <div class="sala-card__price">
             <span class="sala-card__price-label">A partir de</span>
@@ -280,7 +287,7 @@
           <ul class="sala-card__features">
             <li>Mesa fixa exclusiva</li>
             <li>Acesso 24 horas</li>
-            <li>Internet inclusa</li>
+            <li>3h de reunião/mês inclusas</li>
           </ul>
           <div class="sala-card__price">
             <span class="sala-card__price-label">A partir de</span>
@@ -289,6 +296,49 @@
           </div>
           <a href="#contato" class="btn btn--primary btn--block">Solicitar informações</a>
         </article>
+      </div>
+
+      <div class="reuniao-hora reveal" id="reuniao-hora">
+        <div class="reuniao-hora__header">
+          <span class="section__label">Por hora</span>
+          <h3 class="reuniao-hora__title">Sala de reunião</h3>
+          <p class="reuniao-hora__desc">Reserve sob demanda — ideal para receber clientes, apresentações e negociações. Clientes de qualquer plano têm <strong>3 horas mensais inclusas</strong>; horas extras com <strong>20% de desconto</strong> (R$&nbsp;32,00/hora).</p>
+        </div>
+        <div class="reuniao-hora__grid">
+          <article class="reuniao-hora__card">
+            <span class="reuniao-hora__badge">Avulso</span>
+            <h4>Por hora</h4>
+            <p class="reuniao-hora__price">R$ 40<span>,00</span></p>
+            <p class="reuniao-hora__period">/hora</p>
+            <ul>
+              <li>Reserva mínima de 1 hora</li>
+              <li>Aberto a clientes e visitantes</li>
+            </ul>
+          </article>
+          <article class="reuniao-hora__card reuniao-hora__card--featured">
+            <span class="reuniao-hora__badge">15% OFF</span>
+            <h4>Pacote 5 horas</h4>
+            <p class="reuniao-hora__price">R$ 170<span>,00</span></p>
+            <p class="reuniao-hora__period">R$ 34,00/hora</p>
+            <ul>
+              <li>15% de desconto na hora</li>
+              <li>Ideal para uso pontual no mês</li>
+            </ul>
+          </article>
+          <article class="reuniao-hora__card">
+            <span class="reuniao-hora__badge">20% OFF</span>
+            <h4>Pacote 10 horas</h4>
+            <p class="reuniao-hora__price">R$ 320<span>,00</span></p>
+            <p class="reuniao-hora__period">R$ 32,00/hora</p>
+            <ul>
+              <li>20% de desconto na hora</li>
+              <li>Melhor custo-benefício</li>
+            </ul>
+          </article>
+        </div>
+        <div class="reuniao-hora__cta">
+          <a href="#contato" class="btn btn--primary">Reservar sala de reunião</a>
+        </div>
       </div>
     </div>
   </section>
@@ -411,6 +461,9 @@
             <option value="13m2">Sala 13 m²</option>
             <option value="6lugares">Sala 6 Lugares (11,75 m²)</option>
             <option value="estacao">Estação Privativa de Trabalho</option>
+            <option value="reuniao-hora">Sala de reunião por hora</option>
+            <option value="pacote-5h">Pacote 5 horas de reunião</option>
+            <option value="pacote-10h">Pacote 10 horas de reunião</option>
             <option value="visita">Apenas agendar visita</option>
           </select>
         </div>
