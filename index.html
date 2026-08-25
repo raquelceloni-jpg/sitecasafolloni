@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=4">
 </head>
 <body>
 
@@ -201,6 +201,63 @@
           <a href="#contato" class="btn btn--primary btn--block">Solicitar informações</a>
         </article>
 
+        <article class="sala-card reveal">
+          <div class="sala-card__header">
+            <h3>Escritório Privativo</h3>
+            <span class="sala-card__area">84 m²</span>
+          </div>
+          <p class="sala-card__desc">Escritório privativo com banheiro, recepção e 4 salas. Entrada exclusiva.</p>
+          <ul class="sala-card__features">
+            <li>4 salas + recepção</li>
+            <li>Banheiro e entrada exclusiva</li>
+            <li>3h de reunião/mês inclusas</li>
+          </ul>
+          <div class="sala-card__price">
+            <span class="sala-card__price-label">A partir de</span>
+            <span class="sala-card__price-value">R$ 4.320<span>,00</span></span>
+            <span class="sala-card__price-period">/mês</span>
+          </div>
+          <a href="#contato" class="btn btn--primary btn--block">Solicitar informações</a>
+        </article>
+
+        <article class="sala-card reveal">
+          <div class="sala-card__header">
+            <h3>Escritório Privativo</h3>
+            <span class="sala-card__area">46 m²</span>
+          </div>
+          <p class="sala-card__desc">Escritório privativo com 2 salas e um banheiro privativo.</p>
+          <ul class="sala-card__features">
+            <li>2 salas privativas</li>
+            <li>Banheiro privativo</li>
+            <li>3h de reunião/mês inclusas</li>
+          </ul>
+          <div class="sala-card__price">
+            <span class="sala-card__price-label">A partir de</span>
+            <span class="sala-card__price-value">R$ 2.300<span>,00</span></span>
+            <span class="sala-card__price-period">/mês</span>
+          </div>
+          <a href="#contato" class="btn btn--primary btn--block">Solicitar informações</a>
+        </article>
+
+        <article class="sala-card reveal">
+          <div class="sala-card__header">
+            <h3>Sala para 4 lugares</h3>
+            <span class="sala-card__area">20 m²</span>
+          </div>
+          <p class="sala-card__desc">Sala privativa para até 4 pessoas — prática e confortável para pequenas equipes e atendimento de clientes.</p>
+          <ul class="sala-card__features">
+            <li>Até 4 pessoas</li>
+            <li>Espaço de 20 m²</li>
+            <li>3h de reunião/mês inclusas</li>
+          </ul>
+          <div class="sala-card__price">
+            <span class="sala-card__price-label">A partir de</span>
+            <span class="sala-card__price-value">R$ 1.800<span>,00</span></span>
+            <span class="sala-card__price-period">/mês</span>
+          </div>
+          <a href="#contato" class="btn btn--primary btn--block">Solicitar informações</a>
+        </article>
+
         <article class="sala-card reveal sala-card--featured">
           <div class="sala-card__tag">Mais popular</div>
           <div class="sala-card__header">
@@ -299,45 +356,73 @@
       </div>
 
       <div class="reuniao-hora reveal" id="reuniao-hora">
-        <div class="reuniao-hora__header">
-          <span class="section__label">Por hora</span>
-          <h3 class="reuniao-hora__title">Sala de reunião</h3>
-          <p class="reuniao-hora__desc">Reserve sob demanda — ideal para receber clientes, apresentações e negociações. Clientes de qualquer plano têm <strong>3 horas mensais inclusas</strong>; horas extras com <strong>20% de desconto</strong> (R$&nbsp;32,00/hora).</p>
+        <div class="reuniao-hora__intro">
+          <div class="reuniao-hora__copy">
+            <span class="section__label">Por hora</span>
+            <h3 class="reuniao-hora__title">Sala de reunião</h3>
+            <p class="reuniao-hora__desc">Reserve sob demanda para receber clientes, apresentações e negociações — com conforto e privacidade.</p>
+            <div class="reuniao-hora__perk">
+              <span class="reuniao-hora__perk-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 6L9 17l-5-5"/></svg>
+              </span>
+              <div>
+                <strong>Clientes de qualquer plano</strong>
+                <p>3 horas mensais inclusas · horas extras com 20% OFF (R$&nbsp;32,00/hora)</p>
+              </div>
+            </div>
+          </div>
+          <div class="reuniao-hora__media">
+            <img src="public/images/sala-reuniao-1.png" alt="Sala de reunião com sofás e poltronas da Casa Folloni" loading="lazy" class="reuniao-hora__media-main">
+            <img src="public/images/sala-reuniao-2.png" alt="Sala de reunião com mesa, TV e área de estar" loading="lazy" class="reuniao-hora__media-secondary">
+          </div>
         </div>
+
         <div class="reuniao-hora__grid">
           <article class="reuniao-hora__card">
             <span class="reuniao-hora__badge">Avulso</span>
             <h4>Por hora</h4>
-            <p class="reuniao-hora__price">R$ 40<span>,00</span></p>
-            <p class="reuniao-hora__period">/hora</p>
+            <div class="reuniao-hora__price-row">
+              <p class="reuniao-hora__price">R$ 40<span>,00</span></p>
+              <p class="reuniao-hora__period">/hora</p>
+            </div>
             <ul>
               <li>Reserva mínima de 1 hora</li>
               <li>Aberto a clientes e visitantes</li>
+              <li>Ambiente profissional</li>
             </ul>
+            <a href="#contato" class="btn btn--outline-dark btn--block">Reservar</a>
           </article>
+
           <article class="reuniao-hora__card reuniao-hora__card--featured">
-            <span class="reuniao-hora__badge">15% OFF</span>
+            <span class="reuniao-hora__tag">Mais pedido</span>
+            <span class="reuniao-hora__badge reuniao-hora__badge--gold">15% OFF</span>
             <h4>Pacote 5 horas</h4>
-            <p class="reuniao-hora__price">R$ 170<span>,00</span></p>
-            <p class="reuniao-hora__period">R$ 34,00/hora</p>
+            <div class="reuniao-hora__price-row">
+              <p class="reuniao-hora__price">R$ 170<span>,00</span></p>
+              <p class="reuniao-hora__period">R$ 34,00/hora</p>
+            </div>
             <ul>
               <li>15% de desconto na hora</li>
               <li>Ideal para uso pontual no mês</li>
+              <li>Flexível e sem fidelidade</li>
             </ul>
+            <a href="#contato" class="btn btn--primary btn--block">Escolher pacote</a>
           </article>
-          <article class="reuniao-hora__card">
-            <span class="reuniao-hora__badge">20% OFF</span>
+
+          <article class="reuniao-hora__card reuniao-hora__card--best">
+            <span class="reuniao-hora__badge reuniao-hora__badge--gold">20% OFF</span>
             <h4>Pacote 10 horas</h4>
-            <p class="reuniao-hora__price">R$ 320<span>,00</span></p>
-            <p class="reuniao-hora__period">R$ 32,00/hora</p>
+            <div class="reuniao-hora__price-row">
+              <p class="reuniao-hora__price">R$ 320<span>,00</span></p>
+              <p class="reuniao-hora__period">R$ 32,00/hora</p>
+            </div>
             <ul>
               <li>20% de desconto na hora</li>
               <li>Melhor custo-benefício</li>
+              <li>Perfeito para rotina de reuniões</li>
             </ul>
+            <a href="#contato" class="btn btn--outline-dark btn--block">Escolher pacote</a>
           </article>
-        </div>
-        <div class="reuniao-hora__cta">
-          <a href="#contato" class="btn btn--primary">Reservar sala de reunião</a>
         </div>
       </div>
     </div>
@@ -456,6 +541,9 @@
           <select id="interesse" name="interesse">
             <option value="">Selecione uma sala</option>
             <option value="auditorio">Auditório (38 m²)</option>
+            <option value="escritorio-84">Escritório Privativo (84 m²)</option>
+            <option value="escritorio-46">Escritório Privativo (46 m²)</option>
+            <option value="4lugares">Sala para 4 lugares (20 m²)</option>
             <option value="coworking">Sala Coworking (25 m²)</option>
             <option value="reuniao">Sala Mesa de Reunião (24,95 m²)</option>
             <option value="13m2">Sala 13 m²</option>
