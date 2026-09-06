@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Preencha os dados e gere automaticamente o contrato de coworking da Casa Folloni.">
+  <title>Gerar Contrato | Casa Folloni</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="public/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=8">
+</head>
+<body class="page-contrato">
+
+  <header class="header header--scrolled" id="header">
+    <nav class="nav container">
+      <a href="index.html" class="nav__logo" aria-label="Casa Folloni Coworking">
+        <img src="public/images/logo-casa-folloni-dark.png" alt="Casa Folloni Coworking" class="nav__logo-img">
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="index.html#salas">Salas</a></li>
+        <li><a href="index.html#contato">Contato</a></li>
+        <li><a href="contrato.html" class="nav__cta">Gerar contrato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contrato-page section">
+    <div class="container">
+      <div class="section__header reveal reveal--visible">
+        <span class="section__label">Contrato</span>
+        <h1 class="section__title">Dados para o contrato</h1>
+        <p class="section__desc">Preencha as informações do contratante e da sala. Ao final, o contrato é gerado automaticamente para imprimir ou salvar em PDF.</p>
+      </div>
+
+      <form class="contrato-form" id="contratoForm">
+        <fieldset class="contrato-form__block">
+          <legend>1. Dados do contratante</legend>
+          <div class="form__group">
+            <label for="tipoPessoa">Tipo</label>
+            <select id="tipoPessoa" name="tipoPessoa" required>
+              <option value="pj">Pessoa jurídica (empresa)</option>
+              <option value="pf">Pessoa física</option>
+            </select>
+          </div>
+          <div class="form__group">
+            <label for="razaoSocial">Nome / Razão social</label>
+            <input type="text" id="razaoSocial" name="razaoSocial" required placeholder="Nome completo ou razão social">
+          </div>
+          <div class="form__row">
+            <div class="form__group">
+              <label for="documento">CPF / CNPJ</label>
+              <input type="text" id="documento" name="documento" required placeholder="000.000.000-00 ou 00.000.000/0000-00">
+            </div>
+            <div class="form__group">
+              <label for="rgIe">RG / Inscrição estadual</label>
+              <input type="text" id="rgIe" name="rgIe" placeholder="Opcional">
+            </div>
+          </div>
+          <div class="form__group">
+            <label for="endereco">Endereço completo</label>
+            <input type="text" id="endereco" name="endereco" required placeholder="Rua, número, bairro, cidade — UF, CEP">
+          </div>
+          <div class="form__row">
+            <div class="form__group">
+              <label for="emailContrato">E-mail</label>
+              <input type="email" id="emailContrato" name="emailContrato" required placeholder="email@empresa.com">
+            </div>
+            <div class="form__group">
+              <label for="telefoneContrato">Telefone / WhatsApp</label>
+              <input type="tel" id="telefoneContrato" name="telefoneContrato" required placeholder="(41) 99999-9999">
+            </div>
+          </div>
+          <div class="form__group" id="grupoRepresentante">
+            <label for="representante">Representante legal (obrigatório para PJ)</label>
+            <input type="text" id="representante" name="representante" placeholder="Nome do sócio ou administrador">
+          </div>
+          <div class="form__row" id="grupoRepDocs">
+            <div class="form__group">
+              <label for="repCpf">CPF do representante</label>
+              <input type="text" id="repCpf" name="repCpf" placeholder="000.000.000-00">
+            </div>
+            <div class="form__group">
+              <label for="repCargo">Cargo</label>
+              <input type="text" id="repCargo" name="repCargo" placeholder="Sócio, diretor, etc.">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="contrato-form__block">
+          <legend>2. Sala / plano</legend>
+          <div class="form__group">
+            <label for="sala">Sala escolhida</label>
+            <select id="sala" name="sala" required>
+              <option value="">Selecione</option>
+              <option value="araucaria" data-area="84 m²" data-valor="4.320,00" data-tipo="Escritório privativo">Araucária — Escritório (84 m²) — R$ 4.320,00</option>
+              <option value="ipe" data-area="46 m²" data-valor="2.300,00" data-tipo="Escritório privativo">Ipê — Escritório (46 m²) — R$ 2.300,00</option>
+              <option value="cedro" data-area="38 m²" data-valor="4.429,21" data-tipo="Auditório">Cedro — Auditório (38 m²) — R$ 4.429,21</option>
+              <option value="jacaranda" data-area="25 m²" data-valor="2.913,96" data-tipo="Sala coworking">Jacarandá — Coworking (25 m²) — R$ 2.913,96</option>
+              <option value="tipuana" data-area="24,95 m²" data-valor="2.908,13" data-tipo="Sala com mesa de reunião">Tipuana — Mesa de reunião (24,95 m²) — R$ 2.908,13</option>
+              <option value="pau-brasil" data-area="20 m²" data-valor="1.800,00" data-tipo="Sala para 4 lugares">Pau-Brasil — 4 lugares (20 m²) — R$ 1.800,00</option>
+              <option value="pitanga" data-area="13 m²" data-valor="1.031,29" data-tipo="Sala privativa">Pitanga — Sala (13 m²) — R$ 1.031,29</option>
+              <option value="camelia" data-area="11,75 m²" data-valor="1.369,56" data-tipo="Sala para 6 lugares">Camélia — 6 lugares (11,75 m²) — R$ 1.369,56</option>
+              <option value="magnolia" data-area="Individual" data-valor="500,00" data-tipo="Estação privativa">Magnólia — Estação privativa — R$ 500,00</option>
+            </select>
+          </div>
+          <div class="form__row">
+            <div class="form__group">
+              <label for="area">Área</label>
+              <input type="text" id="area" name="area" readonly>
+            </div>
+            <div class="form__group">
+              <label for="valorMensal">Valor mensal (R$)</label>
+              <input type="text" id="valorMensal" name="valorMensal" required placeholder="0.000,00">
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="form__group">
+              <label for="diaVencimento">Dia de vencimento</label>
+              <input type="number" id="diaVencimento" name="diaVencimento" min="1" max="28" value="10" required>
+            </div>
+            <div class="form__group">
+              <label for="dataInicio">Data de início</label>
+              <input type="date" id="dataInicio" name="dataInicio" required>
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="form__group">
+              <label for="tipoPrazo">Prazo</label>
+              <select id="tipoPrazo" name="tipoPrazo" required>
+                <option value="indeterminado">Indeterminado</option>
+                <option value="determinado">Determinado</option>
+              </select>
+            </div>
+            <div class="form__group" id="grupoDataFim" hidden>
+              <label for="dataFim">Término</label>
+              <input type="date" id="dataFim" name="dataFim">
+            </div>
+          </div>
+          <div class="form__group">
+            <label for="observacoes">Observações</label>
+            <textarea id="observacoes" name="observacoes" rows="3" placeholder="Condições especiais, se houver..."></textarea>
+          </div>
+        </fieldset>
+
+        <fieldset class="contrato-form__block">
+          <legend>3. Confirmação</legend>
+          <label class="contrato-form__check">
+            <input type="checkbox" id="aceite" name="aceite" required>
+            <span>Declaro que li e compreendi as cláusulas do contrato, em especial a Cláusula 4 (atraso após 7 dias: bloqueio de acesso, retirada de bens para busca, multa de 10%, juros de 1% ao mês e correção monetária).</span>
+          </label>
+          <div class="contrato-form__actions">
+            <button type="submit" class="btn btn--primary">Gerar contrato</button>
+            <button type="button" class="btn btn--outline-dark" id="btnLimpar">Limpar</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__bottom container">
+      <p>&copy; 2026 Casa Folloni — Life Consultoria Imobiliária. <a href="index.html">Voltar ao site</a></p>
+    </div>
+  </footer>
+
+  <script src="js/contrato.js"></script>
+</body>
+</html>
