@@ -40,7 +40,7 @@ Representante legal (se PJ): _________________________________
 | Item | Preenchimento |
 |------|----------------|
 | Modalidade | ( ) Magnólia — estação ( ) Sala / Escritório nomeado ( ) Outro: _______ |
-| Identificação do espaço | ( ) Araucária ( ) Ipê ( ) Cedro ( ) Jacarandá ( ) Tipuana ( ) Pau-Brasil ( ) Pitanga ( ) Camélia ( ) Magnólia ( ) Oliveira |
+| Identificação do espaço | ( ) Araucária ( ) Imbuia ( ) Cedro ( ) Jacarandá ( ) Tipuana ( ) Pau-Brasil ( ) Pitanga ( ) Camélia ( ) Ipê ( ) Magnólia ( ) Oliveira |
 | Área aproximada | _______ m² |
 | Valor mensal (R$) | R$ ______________ |
 | Dia de vencimento | Todo dia ___ de cada mês |
@@ -209,13 +209,14 @@ CPF/CNPJ: _________________________________
 | Nome | Tipo | Área |
 |------|------|------|
 | Araucária | Escritório privativo (4 salas + recepção + entrada exclusiva) | 84 m² |
-| Ipê | Escritório privativo (2 salas + banheiro) | 46 m² |
+| Imbuia | Escritório privativo (2 salas + banheiro) | 46 m² |
 | Cedro | Auditório | 38 m² |
 | Jacarandá | Sala coworking | 25 m² |
 | Tipuana | Sala com mesa de reunião | 24,95 m² |
 | Pau-Brasil | Sala para 4 lugares | 20 m² |
 | Pitanga | Sala privativa | 13 m² |
 | Camélia | Sala para 6 lugares | 11,75 m² |
+| Ipê | Sala privativa para 1 pessoa | 5,69 m² |
 | Magnólia | Estação privativa | Individual |
 | Oliveira | Sala de reunião (por hora) | — |
 
