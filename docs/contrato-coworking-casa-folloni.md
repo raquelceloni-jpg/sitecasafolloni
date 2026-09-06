@@ -214,7 +214,7 @@ CPF/CNPJ: _________________________________
 | Jacarandá | Sala coworking | 25 m² |
 | Tipuana | Sala com mesa de reunião | 24,95 m² |
 | Pau-Brasil | Sala para 4 lugares | 20 m² |
-| Pitanga | Sala privativa | 13 m² |
+| Pitanga | Sala privativa para até 4 pessoas | 13 m² |
 | Camélia | Sala para 6 lugares | 11,75 m² |
 | Ipê | Sala privativa para 1 pessoa | 5,69 m² |
 | Magnólia | Estação privativa | Individual |

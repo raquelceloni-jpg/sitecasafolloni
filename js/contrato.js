@@ -5,7 +5,7 @@ const SALAS = {
   jacaranda: { nome: 'Jacarandá', tipo: 'Sala coworking', area: '25 m²', valor: '2.913,96', estacao: false },
   tipuana: { nome: 'Tipuana', tipo: 'Sala com mesa de reunião', area: '24,95 m²', valor: '2.908,13', estacao: false },
   'pau-brasil': { nome: 'Pau-Brasil', tipo: 'Sala para 4 lugares', area: '20 m²', valor: '1.800,00', estacao: false },
-  pitanga: { nome: 'Pitanga', tipo: 'Sala privativa', area: '13 m²', valor: '1.031,29', estacao: false },
+  pitanga: { nome: 'Pitanga', tipo: 'Sala privativa para até 4 pessoas', area: '13 m²', valor: '1.031,29', estacao: false },
   camelia: { nome: 'Camélia', tipo: 'Sala para 6 lugares', area: '11,75 m²', valor: '1.369,56', estacao: false },
   ipe: { nome: 'Ipê', tipo: 'Sala privativa para 1 pessoa', area: '5,69 m²', valor: '700,00', estacao: false },
   magnolia: { nome: 'Magnólia', tipo: 'Estação privativa', area: 'Individual', valor: '500,00', estacao: true }
