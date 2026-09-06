@@ -1,13 +1,13 @@
 const SALAS = {
-  araucaria: { nome: 'Araucária', tipo: 'Escritório privativo', area: '84 m²', valor: '4.320,00' },
-  ipe: { nome: 'Ipê', tipo: 'Escritório privativo', area: '46 m²', valor: '2.300,00' },
-  cedro: { nome: 'Cedro', tipo: 'Auditório', area: '38 m²', valor: '4.429,21' },
-  jacaranda: { nome: 'Jacarandá', tipo: 'Sala coworking', area: '25 m²', valor: '2.913,96' },
-  tipuana: { nome: 'Tipuana', tipo: 'Sala com mesa de reunião', area: '24,95 m²', valor: '2.908,13' },
-  'pau-brasil': { nome: 'Pau-Brasil', tipo: 'Sala para 4 lugares', area: '20 m²', valor: '1.800,00' },
-  pitanga: { nome: 'Pitanga', tipo: 'Sala privativa', area: '13 m²', valor: '1.031,29' },
-  camelia: { nome: 'Camélia', tipo: 'Sala para 6 lugares', area: '11,75 m²', valor: '1.369,56' },
-  magnolia: { nome: 'Magnólia', tipo: 'Estação privativa', area: 'Individual', valor: '500,00' }
+  araucaria: { nome: 'Araucária', tipo: 'Escritório privativo', area: '84 m²', valor: '4.320,00', estacao: false },
+  ipe: { nome: 'Ipê', tipo: 'Escritório privativo', area: '46 m²', valor: '2.300,00', estacao: false },
+  cedro: { nome: 'Cedro', tipo: 'Auditório', area: '38 m²', valor: '4.429,21', estacao: false },
+  jacaranda: { nome: 'Jacarandá', tipo: 'Sala coworking', area: '25 m²', valor: '2.913,96', estacao: false },
+  tipuana: { nome: 'Tipuana', tipo: 'Sala com mesa de reunião', area: '24,95 m²', valor: '2.908,13', estacao: false },
+  'pau-brasil': { nome: 'Pau-Brasil', tipo: 'Sala para 4 lugares', area: '20 m²', valor: '1.800,00', estacao: false },
+  pitanga: { nome: 'Pitanga', tipo: 'Sala privativa', area: '13 m²', valor: '1.031,29', estacao: false },
+  camelia: { nome: 'Camélia', tipo: 'Sala para 6 lugares', area: '11,75 m²', valor: '1.369,56', estacao: false },
+  magnolia: { nome: 'Magnólia', tipo: 'Estação privativa', area: 'Individual', valor: '500,00', estacao: true }
 };
 
 const MESES = [
@@ -34,10 +34,59 @@ function maskPhone(value) {
   return v;
 }
 
+function parseBRL(str) {
+  if (!str) return 0;
+  return Number(String(str).replace(/\./g, '').replace(',', '.')) || 0;
+}
+
+function formatBRL(num) {
+  return num.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+function getSelectedItens(form) {
+  const itens = [];
+
+  form.querySelectorAll('input[name="salas"]:checked').forEach((input) => {
+    const sala = SALAS[input.value];
+    if (!sala) return;
+    const unit = parseBRL(sala.valor);
+    itens.push({
+      key: input.value,
+      nome: sala.nome,
+      tipo: sala.tipo,
+      area: sala.area,
+      qtd: 1,
+      valorUnitario: sala.valor,
+      subtotal: unit,
+      subtotalTexto: formatBRL(unit)
+    });
+  });
+
+  const qtdMagnolia = Math.max(0, parseInt(form.qtdMagnolia.value, 10) || 0);
+  if (qtdMagnolia > 0) {
+    const sala = SALAS.magnolia;
+    const unit = parseBRL(sala.valor);
+    const subtotal = unit * qtdMagnolia;
+    itens.push({
+      key: 'magnolia',
+      nome: sala.nome,
+      tipo: sala.tipo,
+      area: sala.area,
+      qtd: qtdMagnolia,
+      valorUnitario: sala.valor,
+      subtotal,
+      subtotalTexto: formatBRL(subtotal)
+    });
+  }
+
+  return itens;
+}
+
 function getFormData(form) {
-  const salaKey = form.sala.value;
-  const sala = SALAS[salaKey] || {};
+  const itens = getSelectedItens(form);
   const prazoIndeterminado = form.tipoPrazo.value === 'indeterminado';
+  const totalCalculado = itens.reduce((sum, item) => sum + item.subtotal, 0);
+  const valorMensal = form.valorMensal.value.trim() || formatBRL(totalCalculado);
 
   return {
     tipoPessoa: form.tipoPessoa.value,
@@ -50,10 +99,9 @@ function getFormData(form) {
     representante: form.representante.value.trim() || '—',
     repCpf: form.repCpf.value.trim() || '—',
     repCargo: form.repCargo.value.trim() || '—',
-    salaNome: sala.nome || '',
-    salaTipo: sala.tipo || '',
-    area: form.area.value.trim(),
-    valorMensal: form.valorMensal.value.trim(),
+    itens,
+    espacosTitulo: itens.map((i) => (i.qtd > 1 ? `${i.nome} (${i.qtd})` : i.nome)).join(', '),
+    valorMensal,
     diaVencimento: form.diaVencimento.value,
     dataInicio: formatDateBR(form.dataInicio.value),
     prazoTexto: prazoIndeterminado
@@ -62,6 +110,32 @@ function getFormData(form) {
     observacoes: form.observacoes.value.trim() || 'Nenhuma',
     dataAssinatura: formatDateLong(null)
   };
+}
+
+function buildItensTable(itens) {
+  const rows = itens.map((item) => `
+    <tr>
+      <td><strong>${item.nome}</strong></td>
+      <td>${item.tipo}</td>
+      <td>${item.area}</td>
+      <td>${item.qtd}</td>
+      <td>R$ ${item.valorUnitario}</td>
+      <td>R$ ${item.subtotalTexto}</td>
+    </tr>`).join('');
+
+  return `<table>
+    <thead>
+      <tr>
+        <th>Espaço</th>
+        <th>Tipo</th>
+        <th>Área</th>
+        <th>Qtd</th>
+        <th>Valor unit.</th>
+        <th>Subtotal</th>
+      </tr>
+    </thead>
+    <tbody>${rows}</tbody>
+  </table>`;
 }
 
 function buildContractHTML(d) {
@@ -74,7 +148,7 @@ function buildContractHTML(d) {
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Contrato — ${d.salaNome} — ${d.razaoSocial}</title>
+<title>Contrato — ${d.espacosTitulo} — ${d.razaoSocial}</title>
 <style>
   @page { margin: 1.8cm; }
   body { font-family: Georgia, 'Times New Roman', serif; font-size: 11pt; line-height: 1.45; color: #1e1812; max-width: 800px; margin: 0 auto; padding: 24px; }
@@ -85,7 +159,7 @@ function buildContractHTML(d) {
   ul { margin: 0 0 12px; padding-left: 18px; }
   table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 10.5pt; }
   th, td { border: 1px solid #d4c5b0; padding: 8px; text-align: left; vertical-align: top; }
-  th { background: #f7f3ed; width: 38%; }
+  th { background: #f7f3ed; }
   .meta { font-size: 9.5pt; color: #7a6e62; text-align: center; margin-bottom: 20px; }
   .assinaturas { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 48px; }
   .assinatura { text-align: center; padding-top: 48px; border-top: 1px solid #1e1812; font-size: 10pt; }
@@ -123,18 +197,17 @@ function buildContractHTML(d) {
 
   <h3>CLÁUSULA 1 — OBJETO</h3>
   <p>1.1. O presente contrato tem por objeto a <strong>prestação de serviços de coworking</strong>, consistente na disponibilização de espaço de trabalho e infraestrutura compartilhada na <strong>Casa Folloni</strong>, situada na Rua Alberto Folloni, 700, Curitiba/PR, mediante contraprestação mensal, <strong>sem caracterizar locação imobiliária</strong> regida pela Lei nº 8.245/1991.</p>
-  <p>1.2. Plano contratado:</p>
+  <p>1.2. Espaços e planos contratados:</p>
+  ${buildItensTable(d.itens)}
   <table>
-    <tr><th>Sala</th><td><strong>${d.salaNome}</strong> — ${d.salaTipo}</td></tr>
-    <tr><th>Área</th><td>${d.area}</td></tr>
-    <tr><th>Valor mensal</th><td>R$ ${d.valorMensal}</td></tr>
+    <tr><th style="width:38%">Valor mensal total</th><td><strong>R$ ${d.valorMensal}</strong></td></tr>
     <tr><th>Vencimento</th><td>Todo dia ${d.diaVencimento} de cada mês</td></tr>
     <tr><th>Início</th><td>${d.dataInicio}</td></tr>
     <tr><th>Prazo</th><td>${d.prazoTexto}</td></tr>
     <tr><th>Sala de reunião</th><td>3 (três) horas mensais inclusas (Sala Oliveira)</td></tr>
     <tr><th>Observações</th><td>${d.observacoes}</td></tr>
   </table>
-  <p>1.3. Estão inclusos, conforme disponibilidade: acesso ao espaço contratado, internet, áreas comuns e as horas de reunião previstas. Serviços extras serão cobrados à parte conforme tabela vigente.</p>
+  <p>1.3. Estão inclusos, conforme disponibilidade: acesso aos espaços contratados, internet, áreas comuns e as horas de reunião previstas. Serviços extras serão cobrados à parte conforme tabela vigente.</p>
 
   <h3>CLÁUSULA 2 — NATUREZA DO CONTRATO</h3>
   <p>2.1. Trata-se de contrato de prestação de serviços com cessão de uso de espaço e infraestrutura, podendo a CONTRATADA acessar as áreas para limpeza, manutenção, segurança e vistoria.</p>
@@ -217,9 +290,10 @@ function buildContractHTML(d) {
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('contratoForm');
-  const salaSelect = document.getElementById('sala');
-  const areaInput = document.getElementById('area');
+  const qtdMagnolia = document.getElementById('qtdMagnolia');
   const valorInput = document.getElementById('valorMensal');
+  const resumoBox = document.getElementById('resumoEspacos');
+  const resumoLista = document.getElementById('resumoLista');
   const tipoPrazo = document.getElementById('tipoPrazo');
   const grupoDataFim = document.getElementById('grupoDataFim');
   const dataFim = document.getElementById('dataFim');
@@ -228,22 +302,40 @@ document.addEventListener('DOMContentLoaded', () => {
   const navMenu = document.getElementById('navMenu');
 
   const params = new URLSearchParams(window.location.search);
-  const salaParam = params.get('sala');
-  if (salaParam && SALAS[salaParam]) {
-    salaSelect.value = salaParam;
-  }
-
-  const syncSala = () => {
-    const sala = SALAS[salaSelect.value];
-    if (!sala) {
-      areaInput.value = '';
+  const salaParam = (params.get('sala') || '').split(',').map((s) => s.trim()).filter(Boolean);
+  salaParam.forEach((key) => {
+    if (key === 'magnolia') {
+      qtdMagnolia.value = Math.max(1, parseInt(qtdMagnolia.value, 10) || 0);
       return;
     }
-    areaInput.value = sala.area;
-    valorInput.value = sala.valor;
+    const checkbox = form.querySelector(`input[name="salas"][value="${key}"]`);
+    if (checkbox) checkbox.checked = true;
+  });
+
+  const syncResumo = () => {
+    const itens = getSelectedItens(form);
+    const total = itens.reduce((sum, item) => sum + item.subtotal, 0);
+
+    if (!itens.length) {
+      resumoBox.hidden = true;
+      resumoLista.innerHTML = '';
+      valorInput.value = '';
+      return;
+    }
+
+    resumoBox.hidden = false;
+    resumoLista.innerHTML = itens.map((item) => {
+      const qtdTxt = item.qtd > 1 ? ` × ${item.qtd}` : '';
+      return `<li><strong>${item.nome}</strong>${qtdTxt} — ${item.tipo} · ${item.area} · R$ ${item.subtotalTexto}</li>`;
+    }).join('');
+    valorInput.value = formatBRL(total);
   };
-  salaSelect.addEventListener('change', syncSala);
-  syncSala();
+
+  form.querySelectorAll('input[name="salas"]').forEach((el) => {
+    el.addEventListener('change', syncResumo);
+  });
+  qtdMagnolia.addEventListener('input', syncResumo);
+  syncResumo();
 
   tipoPrazo.addEventListener('change', () => {
     const determinado = tipoPrazo.value === 'determinado';
@@ -264,7 +356,9 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('btnLimpar').addEventListener('click', () => {
     form.reset();
     grupoDataFim.hidden = true;
-    syncSala();
+    qtdMagnolia.value = 0;
+    syncResumo();
+    syncTipoPessoa();
   });
 
   if (navToggle && navMenu) {
@@ -273,6 +367,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
+    const itens = getSelectedItens(form);
+    if (!itens.length) {
+      alert('Selecione ao menos uma sala ou informe a quantidade de estações Magnólia.');
+      return;
+    }
     if (tipoPrazo.value === 'determinado' && !dataFim.value) {
       alert('Informe a data de término do prazo determinado.');
       return;

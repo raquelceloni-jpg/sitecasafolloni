@@ -1399,6 +1399,109 @@ ul { list-style: none; }
   color: var(--color-brown-dark);
 }
 
+.contrato-form__hint {
+  margin: 0 0 18px;
+  color: var(--color-text-muted, #7a6e62);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.contrato-form__sublabel {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-brown);
+  margin-bottom: 10px;
+}
+
+.contrato-salas {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.contrato-sala-option {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 14px;
+  border: 1px solid var(--color-beige);
+  border-radius: var(--radius-md, 10px);
+  background: var(--color-cream);
+  cursor: pointer;
+  font-size: 0.92rem;
+  line-height: 1.4;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.contrato-sala-option:has(input:checked) {
+  border-color: var(--color-brown);
+  background: var(--color-white);
+}
+
+.contrato-sala-option input {
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.contrato-estacoes {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--color-beige);
+}
+
+.contrato-estacoes__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.contrato-estacoes__row label {
+  font-size: 0.92rem;
+  color: var(--color-text);
+}
+
+.contrato-estacoes__row input[type="number"] {
+  width: 88px;
+  padding: 10px 12px;
+  border: 1px solid var(--color-beige);
+  border-radius: var(--radius-md, 10px);
+  font: inherit;
+}
+
+.contrato-estacoes__preco {
+  font-size: 0.9rem;
+  color: var(--color-text-muted, #7a6e62);
+}
+
+.contrato-resumo {
+  margin-top: 20px;
+  padding: 18px;
+  border-radius: var(--radius-md, 10px);
+  background: var(--color-cream);
+  border: 1px solid var(--color-beige);
+}
+
+.contrato-resumo__lista {
+  list-style: none;
+  margin: 0 0 16px;
+  padding: 0;
+}
+
+.contrato-resumo__lista li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--color-beige);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.contrato-resumo__lista li:last-child {
+  border-bottom: none;
+}
+
 @media (max-width: 768px) {
   .contrato-form__block {
     padding: 22px 16px 4px;

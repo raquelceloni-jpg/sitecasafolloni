@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=8">
+  <link rel="stylesheet" href="css/styles.css?v=9">
 </head>
 <body class="page-contrato">
 
@@ -94,30 +94,62 @@
         </fieldset>
 
         <fieldset class="contrato-form__block">
-          <legend>2. Sala / plano</legend>
+          <legend>2. Espaços contratados</legend>
+          <p class="contrato-form__hint">Marque uma ou mais salas. Se precisar de estações Magnólia, informe a quantidade.</p>
+
           <div class="form__group">
-            <label for="sala">Sala escolhida</label>
-            <select id="sala" name="sala" required>
-              <option value="">Selecione</option>
-              <option value="araucaria" data-area="84 m²" data-valor="4.320,00" data-tipo="Escritório privativo">Araucária — Escritório (84 m²) — R$ 4.320,00</option>
-              <option value="ipe" data-area="46 m²" data-valor="2.300,00" data-tipo="Escritório privativo">Ipê — Escritório (46 m²) — R$ 2.300,00</option>
-              <option value="cedro" data-area="38 m²" data-valor="4.429,21" data-tipo="Auditório">Cedro — Auditório (38 m²) — R$ 4.429,21</option>
-              <option value="jacaranda" data-area="25 m²" data-valor="2.913,96" data-tipo="Sala coworking">Jacarandá — Coworking (25 m²) — R$ 2.913,96</option>
-              <option value="tipuana" data-area="24,95 m²" data-valor="2.908,13" data-tipo="Sala com mesa de reunião">Tipuana — Mesa de reunião (24,95 m²) — R$ 2.908,13</option>
-              <option value="pau-brasil" data-area="20 m²" data-valor="1.800,00" data-tipo="Sala para 4 lugares">Pau-Brasil — 4 lugares (20 m²) — R$ 1.800,00</option>
-              <option value="pitanga" data-area="13 m²" data-valor="1.031,29" data-tipo="Sala privativa">Pitanga — Sala (13 m²) — R$ 1.031,29</option>
-              <option value="camelia" data-area="11,75 m²" data-valor="1.369,56" data-tipo="Sala para 6 lugares">Camélia — 6 lugares (11,75 m²) — R$ 1.369,56</option>
-              <option value="magnolia" data-area="Individual" data-valor="500,00" data-tipo="Estação privativa">Magnólia — Estação privativa — R$ 500,00</option>
-            </select>
-          </div>
-          <div class="form__row">
-            <div class="form__group">
-              <label for="area">Área</label>
-              <input type="text" id="area" name="area" readonly>
+            <span class="contrato-form__sublabel">Salas</span>
+            <div class="contrato-salas" id="listaSalas" role="group" aria-label="Salas">
+              <label class="contrato-sala-option">
+                <input type="checkbox" name="salas" value="araucaria">
+                <span><strong>Araucária</strong> — Escritório · 84 m² · R$ 4.320,00</span>
+              </label>
+              <label class="contrato-sala-option">
+                <input type="checkbox" name="salas" value="ipe">
+                <span><strong>Ipê</strong> — Escritório · 46 m² · R$ 2.300,00</span>
+              </label>
+              <label class="contrato-sala-option">
+                <input type="checkbox" name="salas" value="cedro">
+                <span><strong>Cedro</strong> — Auditório · 38 m² · R$ 4.429,21</span>
+              </label>
+              <label class="contrato-sala-option">
+                <input type="checkbox" name="salas" value="jacaranda">
+                <span><strong>Jacarandá</strong> — Coworking · 25 m² · R$ 2.913,96</span>
+              </label>
+              <label class="contrato-sala-option">
+                <input type="checkbox" name="salas" value="tipuana">
+                <span><strong>Tipuana</strong> — Mesa de reunião · 24,95 m² · R$ 2.908,13</span>
+              </label>
+              <label class="contrato-sala-option">
+                <input type="checkbox" name="salas" value="pau-brasil">
+                <span><strong>Pau-Brasil</strong> — 4 lugares · 20 m² · R$ 1.800,00</span>
+              </label>
+              <label class="contrato-sala-option">
+                <input type="checkbox" name="salas" value="pitanga">
+                <span><strong>Pitanga</strong> — Privativa · 13 m² · R$ 1.031,29</span>
+              </label>
+              <label class="contrato-sala-option">
+                <input type="checkbox" name="salas" value="camelia">
+                <span><strong>Camélia</strong> — 6 lugares · 11,75 m² · R$ 1.369,56</span>
+              </label>
             </div>
+          </div>
+
+          <div class="form__group contrato-estacoes">
+            <span class="contrato-form__sublabel">Estações privativas Magnólia</span>
+            <div class="contrato-estacoes__row">
+              <label for="qtdMagnolia">Quantidade de estações</label>
+              <input type="number" id="qtdMagnolia" name="qtdMagnolia" min="0" max="20" value="0" step="1">
+              <span class="contrato-estacoes__preco">R$ 500,00 cada</span>
+            </div>
+          </div>
+
+          <div class="contrato-resumo" id="resumoEspacos" hidden>
+            <span class="contrato-form__sublabel">Resumo</span>
+            <ul class="contrato-resumo__lista" id="resumoLista"></ul>
             <div class="form__group">
-              <label for="valorMensal">Valor mensal (R$)</label>
-              <input type="text" id="valorMensal" name="valorMensal" required placeholder="0.000,00">
+              <label for="valorMensal">Valor mensal total (R$)</label>
+              <input type="text" id="valorMensal" name="valorMensal" placeholder="0.000,00">
             </div>
           </div>
           <div class="form__row">
@@ -170,6 +202,6 @@
     </div>
   </footer>
 
-  <script src="js/contrato.js"></script>
+  <script src="js/contrato.js?v=2"></script>
 </body>
 </html>
