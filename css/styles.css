@@ -763,13 +763,18 @@ ul { list-style: none; }
   align-items: stretch;
 }
 
+.reuniao-hora__media-stack {
+  display: grid;
+  gap: 12px;
+  min-height: 320px;
+}
+
 .reuniao-hora__media-main,
 .reuniao-hora__media-secondary {
   width: 100%;
   height: 100%;
-  min-height: 320px;
-  max-height: 380px;
-  object-fit: contain;
+  min-height: 0;
+  object-fit: cover;
   object-position: center;
   background: var(--color-white);
   display: block;
@@ -779,7 +784,13 @@ ul { list-style: none; }
 }
 
 .reuniao-hora__media-main {
-  object-fit: contain;
+  min-height: 320px;
+  max-height: 420px;
+  object-fit: cover;
+}
+
+.reuniao-hora__media-secondary {
+  max-height: none;
 }
 
 .reuniao-hora__grid {
@@ -1268,9 +1279,14 @@ ul { list-style: none; }
     order: -1;
   }
 
+  .reuniao-hora__media-stack {
+    grid-template-columns: 1fr 1fr;
+    min-height: 0;
+  }
+
   .reuniao-hora__media-main,
   .reuniao-hora__media-secondary {
-    min-height: 220px;
+    min-height: 200px;
     max-height: 280px;
   }
 
